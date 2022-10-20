@@ -1,0 +1,88 @@
+@import '../../assets/styles/helpers.scss';
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include media(xl) {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        align-items: start;
+    }
+}
+
+.title {
+    @include h4;
+
+    @include media(md) {
+        @include h3;
+    }
+    @include media(xl) {
+        @include h2;
+    }
+}
+
+.slidersWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    margin-top: 2.4rem;
+
+    @include media(md) {
+        gap: 3.2rem;
+        margin-top: 3.2rem;
+        overflow: hidden;
+    }
+
+    @include media(xl) {
+        gap: 4rem;
+        margin-top: 0.8rem;
+    }
+}
+
+.sliderNav {
+    @extend .tabsBar;
+
+    @include media(md) {
+        padding: 1.8rem 1.6rem;
+        overflow: hidden;
+    }
+
+    @include media(xl) {
+        padding: 1.4rem 1.6rem;
+    }
+
+    :global(.swiper-wrapper) {
+        @include media(md) {
+            justify-content: center;
+        }
+
+        @include media(xl) {
+            column-gap: 1.6rem;
+        }
+    }
+}
+
+.slideNav {
+    @extend .tabsBarElement;
+}
+
+.slideNavTitle {
+    @extend .tabsBarTitle;
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+}
+
+.only {
+    @include text-small;
+    color: $gray-3;
+    margin: 2.4rem 0 1.6rem;
+
+    @include media(md) {
+        @include text-medium;
+        margin: 3.2rem 0 1.6rem;
+    }
+}

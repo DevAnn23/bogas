@@ -1,0 +1,141 @@
+@import '../../assets/styles/helpers.scss';
+
+.section {
+    position: relative;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    background-color: $blue-1;
+    padding-bottom: 7.2rem;
+
+    @include media(md) {
+        padding-bottom: 8rem;
+    }
+
+    @include media(xl) {
+        padding: 0;
+        height: calc(100vh - 2 * #{$header-height});
+    }
+}
+
+.topInner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.2rem;
+
+    @include media(md) {
+        margin-top: 2.4rem;
+    }
+
+    @include media(xl) {
+        max-width: 53%;
+        margin: 0;
+    }
+}
+
+.right {
+    order: -1;
+    margin: 0 -#{$container-space-xs};
+
+    @include media(md) {
+        margin: 0 -#{$container-space-md};
+    }
+}
+
+.title {
+    margin-bottom: 3.2rem;
+
+    @include media(md) {
+        margin-bottom: 4rem;
+    }
+}
+
+.linksList {
+    column-gap: 2.8rem;
+    margin-bottom: 2.4rem;
+
+    @include media(md) {
+        margin-bottom: 4rem;
+    }
+
+    @include media(lg) {
+        margin-bottom: 5.6rem;
+    }
+}
+
+.boxesList {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 2.4rem;
+
+    @include media(sm) {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 1.6rem;
+    }
+
+    @include media(lg) {
+        row-gap: 2.4rem;
+        max-width: 62.8rem;
+    }
+}
+
+.box {
+    padding: 1.6rem;
+    border-radius: 2.4rem;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover,
+    &.active {
+        background-color: $white;
+        box-shadow: 0 1.6rem 3.2rem -0.8rem rgba($navy-1, 0.2);
+    }
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @include media(xl) {
+        height: $header-height;
+    }
+}
+
+.logosList {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 4rem;
+    row-gap: 4rem;
+    margin-top: -4.8rem;
+
+    @include media(xl) {
+        justify-content: initial;
+        margin-top: 0;
+    }
+
+    > .item {
+        justify-content: center;
+        flex-basis: 100%;
+
+        @include media(xl) {
+            justify-content: initial;
+            flex-basis: initial;
+        }
+    }
+}

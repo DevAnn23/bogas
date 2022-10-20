@@ -1,0 +1,36 @@
+image: node:14.15.0 
+
+pipelines:
+  default:
+    - step:
+        name: "Build"
+        caches:
+          - node
+        script:
+          - npm run install
+          - npm run g-build
+  branches:
+    master:
+      - step:
+          name: "Build"
+          caches:
+            - node
+          script:
+            - npm run install
+            - npm run g-build
+            - apt-get update && apt-get install --yes zip
+          artifacts: 
+            - package/frontend/public/**
+      - step:
+          name: "Frontend Development"
+          deployment: Frontend-Dev
+          condition:
+            changesets:
+              includePaths:
+                - "package/frontend/**"
+          script:
+            - pipe: atlassian/aws-s3-deploy:0.4.3
+              variables:
+                AWS_DEFAULT_REGION: 'us-east-2'
+                S3_BUCKET: 'dev-client-theme'
+                LOCAL_PATH: 'package/frontend/public'

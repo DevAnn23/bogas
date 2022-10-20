@@ -1,0 +1,117 @@
+@import '../../assets/styles/helpers.scss';
+
+.section {
+    background-color: $blue-1;
+    padding: 4rem 0;
+    margin-top: 0;
+
+    @include media(md) {
+        padding: 6rem 0 4rem;
+    }
+
+    @include media(lg) {
+        padding: 8rem 0;
+    }
+}
+
+.titleWrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 0.8rem;
+
+    @include media(md) {
+        column-gap: 1.2rem;
+    }
+}
+
+.title {
+    @include h4;
+
+    @include media(md) {
+        @include h3;
+    }
+
+    @include media(xl) {
+        @include h2;
+    }
+}
+
+.iconTitle {
+    width: 2.6rem;
+    height: 2.6rem;
+}
+
+.offersList {
+    display: grid;
+    row-gap: 1.6rem;
+    margin-top: 2.4rem;
+
+    @include media(md) {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 3.2rem;
+        margin-top: 3.2rem;
+    }
+
+    @include media(xl) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.offer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 1.2rem;
+    padding: 1.5rem;
+    border: 0.1rem solid $blue-2;
+    border-radius: 1.6rem;
+    transition: 0.3s;
+
+    @include media(xl) {
+        row-gap: 1.6rem;
+        padding: 2.3rem;
+        border-radius: 2.4rem;
+    }
+
+    &:hover {
+        background-color: $white;
+        border: 0.1rem solid $white;
+        box-shadow: 0 1.6rem 3.2rem -0.8rem rgba($navy-3, 0.06);
+
+        .button {
+            color: $white;
+            background-color: $brand-blue;
+            border: 0.1rem solid $brand-blue;
+        }
+    }
+}
+
+.offerTitle {
+    @include label-m;
+
+    @include media(xl) {
+        @include h4;
+    }
+}
+
+.tagsList {
+    margin: 0;
+}
+
+.salary {
+    @include text-small;
+    color: $brand-gray;
+
+    @include media(xl) {
+        @include text-medium;
+    }
+}
+
+.button {
+    display: none;
+
+    @include media(lg) {
+        display: inline-flex;
+        margin-top: auto;
+    }
+}

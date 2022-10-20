@@ -1,0 +1,38 @@
+@import '../mixins/media';
+
+.container {
+    width: $container-width;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $container-space-xs;
+    padding-right: $container-space-xs;
+
+    @include media(md) {
+        padding-left: $container-space-md;
+        padding-right: $container-space-md;
+    }
+
+    @include media(xxl) {
+        padding: 0;
+    }
+}
+
+.container-full-right {
+    margin-left: $container-space-xs;
+
+    @include media(md) {
+        margin-left: $container-space-md;
+    }
+
+    @include media(xl) {
+        margin-left: max(
+            calc((100% - #{$container-width}) / 2 + #{$container-space-md}),
+            #{$container-space-md}
+        );
+    }
+
+    @include media(xxl) {
+        margin-left: calc((100% - #{$container-width}) / 2);
+    }
+}

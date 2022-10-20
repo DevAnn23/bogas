@@ -1,0 +1,13 @@
+.toggle {
+    width: 20rem;
+    height: 3rem;  
+    border-radius: 5rem;
+    &.disabled {
+       background-color: gray;
+    }
+    &.enabled {
+        background-color: lightblue;
+    }
+
+}
+

@@ -1,0 +1,30 @@
+@import '../../../assets/styles/helpers.scss';
+@keyframes bg-letters {
+	0% {
+		background-position-x: 0;
+	}
+
+	100% {
+		background-position-x: 190px;
+	}
+}
+.label {
+	margin-left: 20px;
+	animation-name: bg-letters;
+	animation-duration: 7s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	background: linear-gradient(93deg,rgba(231, 80, 80, 0.582) -.1%, $violet 19.52%,rgba(231, 139, 139, 0.3) 41.3%);
+	background-clip: text !important;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 3px;
+	line-height: 25px;
+	text-transform: uppercase;
+	-webkit-text-fill-color: transparent;
+	color: $black;
+	&.theme-light {
+		background: linear-gradient(93deg,rgba(241, 26, 26, 0.3) -.1%, $black 19.52%,rgba(209, 23, 23, 0.767) 41.3%);
+	}
+}

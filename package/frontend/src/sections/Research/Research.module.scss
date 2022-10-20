@@ -1,0 +1,31 @@
+@import '../../assets/styles/helpers.scss';
+
+.title {
+    margin-bottom: 2.4rem;
+
+    @include media(md) {
+        margin-bottom: 3.2rem;
+    }
+
+    @include media(xl) {
+        margin-bottom: 3.8rem;
+    }
+}
+
+.list {
+    display: grid;
+    row-gap: 3.2rem;
+
+    @include media(md) {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2.4rem;
+    }
+}
+
+.article {
+    row-gap: 2.4rem;
+
+    p {
+        @include text-small;
+    }
+}

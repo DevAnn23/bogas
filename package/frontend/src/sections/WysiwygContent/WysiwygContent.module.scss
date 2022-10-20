@@ -1,0 +1,28 @@
+@import '../../assets/styles/helpers.scss';
+
+.content {
+    > * {
+        margin-bottom: 1.6rem;
+
+        @include media(md) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    b,
+    strong {
+        font-weight: 700;
+    }
+
+    li {
+        position: relative;
+        padding-left: 1.5rem;
+
+        &:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+}

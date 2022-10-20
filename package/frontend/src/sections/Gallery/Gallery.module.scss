@@ -1,0 +1,80 @@
+@import '../../assets/styles/helpers.scss';
+
+.section {
+    position: relative;
+
+    &.hasBackround {
+        margin-bottom: 0;
+    }
+}
+
+.background {
+    background-color: $blue-1;
+    position: absolute;
+    inset: 50% 0 0 0;
+    z-index: -1;
+
+    @include media(lg) {
+        inset: calc((100% + 8rem) / 2) 0 0 0;
+    }
+}
+
+.wrapper {
+    margin: 0 -1.6rem;
+
+    @include media(md) {
+        margin: 0 -3.2rem;
+    }
+}
+
+.title {
+    margin-bottom: 2.4rem;
+
+    @include media(md) {
+        margin-bottom: 3.2rem;
+    }
+
+    @include media(xl) {
+        margin-bottom: 3.8rem;
+    }
+}
+
+.sliderWrapper {
+    position: relative;
+}
+
+.slide {
+    width: 25.3rem;
+
+    @include media(md) {
+        width: 43.1rem;
+    }
+
+    @include media(lg) {
+        width: auto;
+    }
+}
+
+.image {
+    border-radius: 1.6rem;
+    height: 20rem;
+    width: auto;
+
+    @include media(md) {
+        height: 30rem;
+    }
+
+    @include media(lg) {
+        height: 40rem;
+    }
+}
+
+.arrowsContainer {
+    display: none;
+
+    @include media(lg) {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 4rem;
+    }
+}

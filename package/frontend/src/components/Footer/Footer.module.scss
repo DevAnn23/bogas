@@ -1,0 +1,107 @@
+@import '../../assets/styles/helpers.scss';
+
+
+.FooterMenu {
+  background-color: aqua;
+
+  @include media(md) {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 10px;
+  }
+}
+
+.openMenu {
+  display: flex;
+
+  @include media-max(md) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.closeMenu {
+  display: none;
+
+  @include media(md) {
+    display: flex;
+  }
+}
+
+.burgerMenu {
+  width: 35px;
+  height: 30px;
+  margin: 10px 10px;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  display: inline-block;
+  background-color: $white;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  @include media(md) {
+    display: none;
+  }
+
+  span {
+    background-color: $blue;
+    position: absolute;
+    border-radius: 2px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    width: 100%;
+    height: 4px;
+    transition-duration: 500ms;
+
+    &:nth-child(1) {
+      top: 0px;
+      left: 0px;
+    }
+
+    &:nth-child(2) {
+      top: 13px;
+      left: 0px;
+      opacity: 1;
+    }
+
+    &:nth-child(3) {
+      bottom: 0px;
+      left: 0px;
+    }
+  }
+
+  &:not(.burgerMenuOpen):hover {
+    span:nth-child(1) {
+      transform: rotate(-3deg) scaleY(1.1);
+    }
+
+    span:nth-child(2) {
+      transform: rotate(3deg) scaleY(1.1);
+    }
+
+    span:nth-child(3) {
+      transform: rotate(-4deg) scaleY(1.1);
+    }
+  }
+
+  &.burgerMenuOpen {
+    span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 13px;
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 13px;
+    }
+  }
+}

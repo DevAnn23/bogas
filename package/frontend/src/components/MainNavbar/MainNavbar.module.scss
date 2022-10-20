@@ -1,0 +1,18 @@
+@import '../../assets/styles/helpers.scss';
+.mainNavbarList {
+    list-style: none;
+    margin: 0 20px;
+    padding: 0;
+    display: flex;
+}
+.mainNavbarItem {
+    padding: 0 20px;
+    a {
+        color: $violet;
+        font-size: 14px;
+        letter-spacing: .01em;
+        line-height: 20px;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+    }
+}

@@ -1,0 +1,62 @@
+@import '../../assets/styles/helpers.scss';
+
+.section {
+    background-color: $blue-1;
+    padding: 3.2rem 0 4rem;
+
+    @include media(xl) {
+        padding: 5.6rem 0 8rem;
+    }
+}
+
+.title {
+    margin-bottom: 2.4rem;
+
+    @include media(md) {
+        margin-bottom: 3.2rem;
+    }
+
+    @include media(lg) {
+        margin-bottom: 4rem;
+    }
+}
+
+.list {
+    display: grid;
+    row-gap: 2.4rem;
+
+    @include media(md) {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 4.8rem;
+        column-gap: 2.4rem;
+    }
+
+    @include media(lg) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.videoThumbnail {
+    @include media(md) {
+        &:last-child {
+            grid-column: span 2;
+
+            & > *:first-child {
+                height: 40rem;
+            }
+        }
+    }
+
+    @include media(lg) {
+        grid-column: span 2;
+
+        &:last-child,
+        &:nth-last-child(2) {
+            grid-column: span 3;
+
+            & > *:first-child {
+                height: 40rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,112 @@
+@import '../../assets/styles/helpers.scss';
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include media(md) {
+        display: grid;
+        column-gap: 2.4rem;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            'img ...'
+            'img title'
+            'img desc'
+            'img ...';
+
+        &.withButton {
+            grid-template-areas:
+                'img ...'
+                'img title'
+                'img desc'
+                'img btn'
+                'img ...';
+        }
+    }
+
+    @include media(lg) {
+        column-gap: 4.8rem;
+    }
+
+    @include media(xxl) {
+        column-gap: 13.3rem;
+        justify-content: end;
+        grid-template-columns: auto 51.9rem;
+    }
+
+    &.around {
+        @include media(md) {
+            @include media-max(lg) {
+                display: block;
+
+                .image {
+                    float: left;
+                    width: calc(50% - 1.2rem);
+                    margin-top: 3.5rem;
+                    margin-right: 2.4rem;
+                }
+
+                .buttonWrapper {
+                    justify-content: center;
+                }
+
+                .button {
+                    padding-left: 4.8rem;
+                    padding-right: 4.8rem;
+                }
+            }
+        }
+    }
+}
+
+.image {
+    width: 100%;
+    max-height: 24rem;
+    border-radius: 2.4rem;
+    margin-bottom: 1.6rem;
+
+    @include media(md) {
+        grid-area: img;
+        justify-self: end;
+        max-width: 100%;
+        max-height: initial;
+        height: 50rem;
+        margin-bottom: 0;
+
+        @include media-max(xxl) {
+            &.aroundImage {
+                height: initial;
+            }
+        }
+    }
+
+    @include media(xxl) {
+        height: initial;
+    }
+}
+
+.title {
+    order: -1;
+
+    @include media(md) {
+        order: initial;
+        grid-area: title;
+    }
+}
+
+.description {
+    @include media(md) {
+        grid-area: desc;
+    }
+}
+
+.buttonWrapper {
+    display: none;
+    margin-top: 2.4rem;
+
+    @include media(md) {
+        display: flex;
+        grid-area: btn;
+    }
+}

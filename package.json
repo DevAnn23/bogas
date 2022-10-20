@@ -1,0 +1,10 @@
+{
+    "name": "theme",
+    "version": "1.0.0",
+    "private": true,
+    "description": "theme",
+    "scripts": {
+        "install": "cd package/frontend && npm install",
+        "g-build": "cd package/frontend && npm run build"
+    }
+}

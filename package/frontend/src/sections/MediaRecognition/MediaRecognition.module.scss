@@ -1,0 +1,38 @@
+@import '../../assets/styles/helpers.scss';
+
+.section {
+    background-color: $blue-1;
+    padding: 4rem 0 3.4rem;
+
+    @include media(md) {
+        padding: 3.2rem 0 3.4rem;
+    }
+
+    @include media(xl) {
+        padding: 8rem 0;
+    }
+}
+
+.wrapper {
+    @include media(xl) {
+        margin: 0 10.9rem;
+    }
+}
+
+.top {
+    margin-bottom: 2.4rem;
+
+    @include media(xl) {
+        margin-bottom: 3.2rem;
+    }
+}
+
+.list {
+    display: grid;
+    row-gap: 1.8rem;
+
+    @include media(md) {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2.4rem;
+    }
+}

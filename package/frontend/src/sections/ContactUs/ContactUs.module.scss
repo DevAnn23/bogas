@@ -1,0 +1,41 @@
+@import '../../assets/styles/helpers.scss';
+
+.wrapper {
+    max-width: 52.5rem;
+    margin: 3.2rem auto 0;
+
+    @include media(md) {
+        margin-top: 4rem;
+    }
+
+    @include media(lg) {
+        margin-top: 5.6rem;
+        max-width: 62.8rem;
+    }
+}
+
+.contactPerson {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.4rem;
+
+    @include media(md) {
+        margin-bottom: 3.2rem;
+    }
+}
+
+.socialsPerson {
+    display: flex;
+    column-gap: 2rem;
+
+    @include media(md) {
+        column-gap: 3.2rem;
+    }
+}
+
+.socialButton {
+    @include media-max(md) {
+        font-size: 0;
+    }
+}

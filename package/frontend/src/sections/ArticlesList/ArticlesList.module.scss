@@ -1,0 +1,56 @@
+@import '../../assets/styles/helpers.scss';
+
+.title {
+    margin-bottom: 2.4rem;
+
+    @include media(md) {
+        margin-bottom: 3.2rem;
+    }
+
+    @include media(lg) {
+        margin-bottom: 4rem;
+    }
+}
+
+.articlesList {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 2.4rem;
+    row-gap: 2.4rem;
+
+    @include media(md) {
+        row-gap: 4.8rem;
+    }
+
+    .articleMd {
+        grid-column: span 6;
+
+        @include media(md) {
+            grid-column: span 3;
+        }
+
+        @include media(xl) {
+            grid-column: span 2;
+        }
+    }
+
+    .articleLg {
+        grid-column: span 6;
+
+        @include media(xl) {
+            grid-column: span 3;
+        }
+    }
+
+    .articleLgOnTablet {
+        @include media(md) {
+            @include media-max(xl) {
+                grid-column: span 6;
+
+                & > a:first-of-type {
+                    height: 40rem;
+                }
+            }
+        }
+    }
+}

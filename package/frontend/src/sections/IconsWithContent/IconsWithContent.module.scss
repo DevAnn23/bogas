@@ -1,0 +1,52 @@
+@import '../../assets/styles/helpers.scss';
+
+.section {
+    padding: 4rem 0 3.2rem;
+    background-color: $blue-1;
+
+    @include media(md) {
+        padding: 3.2rem 0 4rem;
+    }
+
+    @include media(xl) {
+        padding: 8rem 0;
+    }
+}
+
+.wrapper {
+    display: grid;
+    align-items: center;
+    row-gap: 2.4rem;
+
+    @include media(md) {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2.4rem;
+    }
+
+    @include media(lg) {
+        column-gap: 4.8rem;
+    }
+
+    @include media(xxl) {
+        justify-content: end;
+        grid-template-columns: 51.9rem auto;
+        column-gap: 13.3rem;
+    }
+}
+
+.IconsListWithTitle {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.6rem;
+    row-gap: 2.4rem;
+
+    @include media(md) {
+        column-gap: 2.4rem;
+        row-gap: 8.5rem;
+    }
+
+    @include media(xxl) {
+        column-gap: 3.2rem;
+        row-gap: 4.8rem;
+        max-width: 51.9rem;
+    }
+}

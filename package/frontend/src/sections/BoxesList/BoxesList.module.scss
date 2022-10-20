@@ -1,0 +1,98 @@
+@import '../../assets/styles/helpers.scss';
+
+.section {
+    margin-top: 3.2rem;
+
+    @include media(md) {
+        margin-top: 5.2rem;
+    }
+
+    @include media(lg) {
+        margin-top: 6.4rem;
+    }
+}
+
+.title {
+    @include h4;
+
+    @include media(md) {
+        @include h3;
+    }
+
+    @include media(xl) {
+        @include h2;
+        margin-top: 4.8rem;
+    }
+}
+
+.boxesList {
+    display: grid;
+    row-gap: 3rem;
+
+    @include media(sm) {
+        grid-template-columns: auto auto;
+        justify-content: center;
+        row-gap: 5.6rem;
+        column-gap: 2.4rem;
+    }
+
+    @include media(md) {
+        column-gap: 4.8rem;
+    }
+
+    @include media(xl) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    @include media(xxl) {
+        margin: 0 10rem;
+    }
+}
+
+.boxesListWithTitle {
+    display: grid;
+    row-gap: 4rem;
+    align-items: start;
+
+    @include media(sm) {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 4.8rem;
+        column-gap: 2.4rem;
+    }
+
+    @include media(xl) {
+        row-gap: 8rem;
+    }
+
+    & > *:first-child {
+        margin-bottom: -0.8rem;
+
+        @include media(md) {
+            margin-bottom: -1.6rem;
+        }
+
+        @include media(xl) {
+            margin-bottom: 0;
+        }
+    }
+
+    & > *:first-child,
+    & > *:last-child {
+        @include media(sm) {
+            @include media-max(xl) {
+                grid-column: span 2;
+            }
+        }
+    }
+
+    &.size3 {
+        @include media(xl) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+    &.size4 {
+        @include media(xl) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+@import '../../assets/styles/helpers.scss';
+
+.section {
+    position: relative;
+    background-color: $blue-1;
+    padding: 4rem 0;
+
+    @include media(md) {
+        padding: 3.2rem 0 4rem;
+    }
+
+    @include media(xl) {
+        padding: 8rem 0;
+    }
+}
+
+.topRightBg {
+    display: none;
+
+    @include media(xl) {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+.bottomLeftBg {
+    display: none;
+
+    @include media(xl) {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+
+    @include media-max(md) {
+        padding-right: 0;
+    }
+}
+
+.title {
+    @include h4;
+
+    @include media(md) {
+        @include h3;
+    }
+
+    @include media(xl) {
+        @include h2;
+    }
+
+    margin-bottom: 3.2rem;
+}
+
+.wrapperGrid {
+    display: none;
+
+    @include media(md) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        column-gap: 2.4rem;
+    }
+}
+
+.column {
+    @include media(md) {
+        display: grid;
+        row-gap: 2.4rem;
+    }
+}
+
+.slide {
+    width: min(32.8rem, calc(100% - 3.2rem));
+}

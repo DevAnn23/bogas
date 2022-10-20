@@ -1,0 +1,54 @@
+.tabsBar {
+    display: flex;
+    margin: 0;
+    padding: 1.4rem 1.6rem;
+    border-top: 0.1rem solid $blue-6;
+    border-bottom: 0.1rem solid $blue-6;
+    overflow: initial;
+
+    @include media(md) {
+        margin: 0;
+        padding: 1.8rem 1.6rem;
+        overflow: hidden;
+    }
+
+    @include media(xl) {
+        align-self: start;
+        padding: 1.4rem 1.6rem;
+    }
+}
+
+.tabsBarElement {
+    display: flex;
+    padding: 0.4rem 1.5rem;
+    width: auto;
+    border: 0.1rem solid transparent;
+    border-radius: 0.8rem;
+    transition: $time-transition;
+    cursor: default;
+
+    @include media(md) {
+        padding: 0.8rem 1.5rem;
+    }
+
+    @include media(xl) {
+        padding: 0.4rem 1.5rem;
+    }
+
+    &.active {
+        border: 0.1rem solid $brand-blue;
+
+        .tabsBarTitle {
+            font-weight: 500;
+            color: $brand-blue;
+            cursor: default;
+        }
+    }
+}
+
+.tabsBarTitle {
+    @include label-s;
+    font-weight: 400;
+    color: $brand-gray;
+    cursor: pointer;
+}

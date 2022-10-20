@@ -1,0 +1,142 @@
+@import '../../assets/styles/helpers.scss';
+
+.title {
+    margin-bottom: 2.4rem;
+
+    @include media(md) {
+        margin-bottom: 3.2rem;
+    }
+
+    @include media(xxl) {
+        margin-bottom: 7.2rem;
+    }
+}
+
+.slidersWrapper {
+    display: flex;
+    flex-direction: column;
+    column-gap: 2.4rem;
+    row-gap: 2.4rem;
+
+    @include media(md) {
+        row-gap: 3.2rem;
+    }
+
+    @include media(xxl) {
+        flex-direction: row;
+    }
+}
+
+.sliderNav {
+    flex-shrink: 0;
+    width: 100%;
+    padding-bottom: 1.6rem;
+
+    @include media(xxl) {
+        padding-bottom: 0;
+        padding-left: 1.6rem;
+        margin-top: 4.4rem;
+        width: 30.2rem;
+    }
+}
+
+.slideNav {
+    width: auto;
+    height: auto;
+    position: relative;
+    cursor: pointer;
+
+    &.active {
+        cursor: default;
+
+        &:before {
+            content: '';
+            background-color: $navy-3;
+            position: absolute;
+            left: 0;
+            bottom: -1.2rem;
+            transform: translateY(-100%);
+            width: 3.2rem;
+            height: 0.4rem;
+            border-radius: 1.6rem;
+
+            @include media(xxl) {
+                bottom: initial;
+                top: 50%;
+                left: -1.2rem;
+                transform: translate(-100%, -50%);
+                width: 0.4rem;
+                height: 1.6rem;
+            }
+        }
+
+        .slideNavTitle {
+            font-weight: 500;
+            color: $navy-3;
+        }
+    }
+}
+
+.slideNavTitle {
+    @include text-small;
+    color: $brand-gray;
+    display: flex;
+}
+
+.slider {
+    width: 100%;
+}
+
+.slideInner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+
+    @include media(md) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        column-gap: 2.4rem;
+    }
+
+    @include media(xxl) {
+        align-items: initial;
+        column-gap: 10rem;
+    }
+}
+
+.slideTitle {
+    @include label-m;
+    margin-bottom: 1.6rem;
+
+    @include media(md) {
+        @include h4;
+    }
+}
+
+.description {
+    @include text-small;
+    color: $brand-gray;
+
+    @include media(md) {
+        @include text-medium;
+    }
+}
+
+.thumbnail {
+    flex-shrink: 0;
+    width: 100%;
+    overflow: hidden;
+    order: -1;
+
+    @include media(md) {
+        order: initial;
+    }
+
+    @include media(xxl) {
+    }
+
+    & > * {
+        width: 100%;
+    }
+}

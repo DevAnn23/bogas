@@ -1,0 +1,69 @@
+@mixin h1 {
+    font-family: $raleway;
+    font-size: 4.8rem;
+    line-height: 6.4rem;
+    font-weight: 800;
+}
+
+@mixin h2 {
+    font-family: $raleway;
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+    font-weight: 700;
+}
+
+@mixin h3 {
+    font-family: $raleway;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    font-weight: 700;
+}
+
+@mixin h4 {
+    font-family: $raleway;
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: 600;
+}
+
+@mixin label-m {
+    font-family: $maven-pro;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 500;
+}
+
+@mixin label-s {
+    font-family: $maven-pro;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    font-weight: 500;
+}
+
+@mixin text-medium {
+    font-family: $maven-pro;
+    font-size: 1.6rem;
+    line-height: 3.2rem;
+    font-weight: 400;
+}
+
+@mixin text-small {
+    font-family: $maven-pro;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    font-weight: 400;
+}
+
+@mixin caption-regular {
+    font-family: $maven-pro;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-weight: 400;
+}
+
+@mixin caption-medium {
+    font-family: $maven-pro;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-weight: 500;
+}
